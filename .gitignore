@@ -23,3 +23,5 @@ bin/
 
 ### Mac OS ###
 .DS_Store
+/.idea/
+/CAB302-Prac2.iml
