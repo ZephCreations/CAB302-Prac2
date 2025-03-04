@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class ToDoList {
     private User user;
     private boolean isRunning;
@@ -72,7 +74,7 @@ public class ToDoList {
     public void onShowAllItems() {
         for (int i = 0; i < user.getToDoItems().size(); i++) {
             ToDoItem item = user.getToDoItems().get(i);
-            if (item.isDone()) {
+            if (item.getDone()) {
                 System.out.println(i + ". [X] " + item.getDescription());
             } else {
                 System.out.println(i + ". [ ] " + item.getDescription());
@@ -87,7 +89,8 @@ public class ToDoList {
         System.out.print("Enter the description of the item: ");
         Scanner scanner = new Scanner(System.in);
         String description = scanner.nextLine();
-        // TODO Now: Call the add(ToDoItem item) method of the user's to-do items list to add a new item
+        // Call the add(ToDoItem item) method of the user's to-do items list to add a new item
+        user.getToDoItems().add(new ToDoItem(description));
     }
 
     /**
@@ -98,7 +101,8 @@ public class ToDoList {
         System.out.print("Enter the number of the item to mark as done: ");
         Scanner scanner = new Scanner(System.in);
         int itemNumber = scanner.nextInt();
-        // TODO Now: Set the isDone field of the item at the specified index to true
+        // Set the isDone field of the item at the specified index to true
+        user.getToDoItems().get(itemNumber).setDone(true);
     }
 
     /**
@@ -109,7 +113,8 @@ public class ToDoList {
         System.out.print("Enter the number of the item to mark as undone: ");
         Scanner scanner = new Scanner(System.in);
         int itemNumber = scanner.nextInt();
-        // TODO Now: Set the isDone field of the item at the specified index to false
+        // Set the isDone field of the item at the specified index to false
+        user.getToDoItems().get(itemNumber).setDone(false);
     }
 
     /**
@@ -120,7 +125,8 @@ public class ToDoList {
         System.out.print("Enter the number of the item to delete: ");
         Scanner scanner = new Scanner(System.in);
         int itemNumber = scanner.nextInt();
-        // TODO Now: Remove the item at the specified index from the user's to-do items list
+        //  Remove the item at the specified index from the user's to-do items list
+        user.getToDoItems().remove(itemNumber);
     }
 
     /**

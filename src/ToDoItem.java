@@ -18,11 +18,11 @@ public class ToDoItem {
     }
 
     // Getter for isDone
-    public boolean getisDone(boolean isDone) {
+    public boolean getDone() {
         return isDone;
     }
     // Setter for isDone
-    public void setisDone(boolean isDone) {
+    public void setDone(boolean isDone) {
         this.isDone = isDone;
     }
 
